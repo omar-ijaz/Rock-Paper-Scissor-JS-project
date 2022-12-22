@@ -1,48 +1,57 @@
-let choices = ["rock", "paper", "scissors"];
 
-function getUserInput () {
+let uI = getUserInput();
+function getUserInput () 
+{
     let userInput = prompt("Do you choose rock, paper or scissors?").toLocaleLowerCase();
-    if (userInput ==="paper" || userInput ==="rock" || userInput ==="scissors") {
+    
+    if (userInput === "paper" || userInput === "rock" || userInput === "scissors") 
+    {
         alert("you chose " + `${userInput}`)
     }
-    else {
-        alert("error, try again")
-        console.log (getUserInput())
+    else 
+    {
+        alert("error, try again");
+        
+        
     }
-    console.log(userInput)
+   return userInput 
 }
-console.log (getUserInput())
 
+let cI = getComputerInput();
 function getComputerInput () {
+    let choices = ["rock", "paper", "scissors"];
     let computerInput = choices[Math.floor(Math.random()*3)]
     alert("The computer chose " + `${computerInput}`)
     
-   
+return computerInput
 }
-console.log (getComputerInput())
+
 
 
 function declareWinner(userInput, computerInput) {
 
     if(userInput === "rock" && computerInput === 'paper') {
-        alert ('You lose! paper beats rock!');     
+        alert('You lose! paper beats rock!');     
     } else if (userInput === 'rock' && computerInput === 'rock') {
-        alert ('Its a tie!');     
+        alert('Its a tie!');     
     } else if (userInput === 'rock' && computerInput === 'scissors') {
-        alert ('You win! Rock beats scissors!');     
+        alert('You win! Rock beats scissors!');     
     } else if(userInput === "paper" && computerInput === 'rock') {
-        alert ('You win! paper beats rock!');     
+        alert('You win! paper beats rock!');     
     } else if (userInput === 'paper' && computerInput === 'paper') {
-        alert ('Its a tie!');     
+        alert('Its a tie!');     
     } else if (userInput === 'paper' && computerInput === 'scissors') { 
-        alert ('You lose! Scissors beats paper!');  
+        alert('You lose! Scissors beats paper!');  
     } else if(userInput === "scissors" && computerInput === 'rock') {
-        alert ('You lose! Rock beats scissors!');     
+        alert('You lose! Rock beats scissors!');     
     } else if (userInput === 'scissors' && computerInput === 'paper') {
-        alert ('You win! Scissors beats paper!');     
+        alert('You win! Scissors beats paper!');     
     } else  { 
-        alert ('It is a tie!');  
+        alert('It is a tie!');  
     }  
 }
 
-console.log(declareWinner())
+
+
+
+console.log(declareWinner(uI,cI));
